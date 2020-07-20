@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Platform, View, Text, TouchableOpacity} from 'react-native';
+import {Platform, View, Text, TouchableOpacity, Alert} from 'react-native';
 import Imc from '../../components/main/Imc';
 import Slider from '@react-native-community/slider';
 import {storeImc, getClassification, calculate} from '../../services/imc';
@@ -41,14 +41,21 @@ const Main = ({navigation}: any) => {
   }, []);
 
   const onRegisterClick = async () => {
-    await storeImc({
-      imc,
-      classification: imcAvaliation,
-      color: imcAvaliationColor,
-      height,
-      weight,
-    });
-    navigation.navigate('Historic');
+    const puchased = false;
+    if (puchased) {
+      await storeImc({
+        imc,
+        classification: imcAvaliation,
+        color: imcAvaliationColor,
+        height,
+        weight,
+      });
+      navigation.navigate('Historic');
+    } else {
+      Alert.alert('Funcionalidade Premium: Você precisa adquirir')
+    }
+   
+    
   };
 
   const onHistoricPress = async () => {
