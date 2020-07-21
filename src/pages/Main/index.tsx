@@ -30,7 +30,7 @@ const Main = ({navigation}: any) => {
   const [height, setHeight] = useState<number>(0);
   const [imc, setImc] = useState<number>(0);
   const [imcAvaliation, setImcAvaliation] = useState<string>('Indeterminado');
-  const [imcAvaliationColor, setImcAvaliationColor] = useState(Colors.carbon);
+  const [imcAvaliationColor, setImcAvaliationColor] = useState<{}>(Colors.carbon);
 
   useEffect(() => {
     fetchAvailableProducts(itemSubs);
@@ -41,8 +41,7 @@ const Main = ({navigation}: any) => {
   }, []);
 
   const onRegisterClick = async () => {
-    const puchased = false;
-    if (puchased) {
+    if (await purchased(defaultProductId)) {
       await storeImc({
         imc,
         classification: imcAvaliation,
@@ -52,14 +51,18 @@ const Main = ({navigation}: any) => {
       });
       navigation.navigate('Historic');
     } else {
-      Alert.alert('Funcionalidade Premium: Você precisa adquirir')
+      requestPurschase(defaultProductId);
     }
    
     
   };
 
   const onHistoricPress = async () => {
+    if (await purchased(defaultProductId)) {
     navigation.navigate('Historic');
+    } else {
+      requestPurschase(defaultProductId);
+    }
   };
 
   const imcClassification = (val: any) => {

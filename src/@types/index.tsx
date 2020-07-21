@@ -7,6 +7,7 @@ export interface DayInfosInterface {
     height: string,
   }
 
-  export interface Puchase {
-    productId: number,
+  export interface Purchase {
+    productId: any,
+    transactionReceipt: any;
   }

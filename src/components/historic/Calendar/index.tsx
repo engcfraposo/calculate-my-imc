@@ -1,11 +1,8 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-
 import {Calendar as RNCalendars} from 'react-native-calendars';
-
 import {getDayInfos} from '../../../services/calendar';
-
 import Colors from '../../../styles/colors';
+import styles from './styles'
 
 const Calendar = ({markedDates, setDayInfos}) => {
   return (
@@ -42,15 +39,5 @@ const Calendar = ({markedDates, setDayInfos}) => {
     />
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderColor: Colors.champagneDark,
-    height: 370,
-    width: 350,
-    backgroundColor: Colors.asphaltDark,
-  },
-});
 
 export default Calendar;
