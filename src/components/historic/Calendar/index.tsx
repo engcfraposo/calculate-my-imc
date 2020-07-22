@@ -1,13 +1,11 @@
 import React from 'react';
-import {Calendar as RNCalendars} from 'react-native-calendars';
 import {getDayInfos} from '../../../services/calendar';
 import Colors from '../../../styles/colors';
-import styles from './styles'
+import { RNCalendars } from './styles'
 
 const Calendar = ({markedDates, setDayInfos}) => {
   return (
     <RNCalendars
-      style={styles.container}
       theme={{
         calendarBackground: Colors.asphaltDark,
         monthTextColor: Colors.white,

@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.blueDark,
     },
     label: {
       color: Colors.white,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
       letterSpacing: -0.17,
     },
     historicButtonText: {
-      color: Colors.blue,
+      color: Colors.white,
       fontSize: 22,
       lineHeight: 30,
       letterSpacing: -0.17,

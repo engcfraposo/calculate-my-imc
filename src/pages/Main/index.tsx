@@ -1,17 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {Platform, View, Text, TouchableOpacity, Alert} from 'react-native';
+import {Platform, View, Text, TouchableOpacity, ScrollView} from 'react-native';
 import Imc from '../../components/main/Imc';
 import Slider from '@react-native-community/slider';
 import {storeImc, getClassification, calculate} from '../../services/imc';
 import styles from './styles'
-
 import {
   purchased,
   requestPurschase,
   fetchAvailableProducts,
   purchaseUpdateSubscription,
 } from '../../services/purchase';
-
+import Header from '../../components/Header'
 import Colors from '../../styles/colors';
 
 const itemSubs: any = Platform.select({
@@ -78,6 +77,9 @@ const Main = ({navigation}: any) => {
   };
 
   return (
+    <>
+    <Header />
+    <ScrollView>
     <View style={styles.container}>
       <Imc
         value={imc}
@@ -123,6 +125,8 @@ const Main = ({navigation}: any) => {
         <Text style={styles.historicButtonText}>Histórico</Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
+    </>
   );
 };
 

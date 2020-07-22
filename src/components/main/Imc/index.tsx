@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
+import styles from './styles'
 
 const Imc = ({value, avaliationColor, avaliation}) => {
   return (
@@ -11,26 +12,5 @@ const Imc = ({value, avaliationColor, avaliation}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  imcBorder: {
-    width: 252,
-    height: 252,
-    borderRadius: 150,
-    borderWidth: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  imcValue: {
-    fontSize: 76,
-    fontWeight: '300',
-  },
-  imcAvaliation: {
-    fontSize: 26,
-    fontWeight: '300',
-    textAlign: 'center',
-    width: 200,
-  },
-});
 
 export default Imc;

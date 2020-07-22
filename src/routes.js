@@ -1,6 +1,8 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import Colors from './styles/colors';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,7 @@ const AppScreens = () => {
 const Routes = () => {
   return (
     <NavigationContainer>
+       <StatusBar barStyle="light-content" backgroundColor={Colors.blueDark} />
       <AppScreens />
     </NavigationContainer>
   );
